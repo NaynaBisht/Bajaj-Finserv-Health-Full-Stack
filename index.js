@@ -79,6 +79,67 @@ app.post('/bfhl', (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    const htmlResponse = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bajaj Finserv Health | Full Stack API</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f8f9fa; 
+                color: #212529;
+                text-align: center;
+            }
+            .container {
+                padding: 2.5rem;
+                background: #ffffff; 
+                border-radius: 15px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                max-width: 600px;
+                width: 90%;
+                border: 1px solid #e9ecef;
+            }
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+                color: #343a40;
+            }
+            p {
+                font-size: 1.2rem;
+                margin-top: 0;
+                color: #6c757d;
+            }
+            code {
+                background: #e9ecef;
+                padding: 0.2rem 0.5rem;
+                border-radius: 5px;
+                font-family: "SF Mono", "Courier New", Courier, monospace;
+                color: #d63384;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Bajaj Finserv Health | Full Stack</h1>
+            <p>VIT Full Stack Assessment API</p>
+            <p>The API endpoint is at <code>/bfhl</code> and accepts POST requests.</p>
+        </div>
+    </body>
+    </html>
+    `;
+    res.send(htmlResponse);
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
