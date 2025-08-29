@@ -79,7 +79,6 @@ app.post('/bfhl', (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
     const htmlResponse = `
     <!DOCTYPE html>
     <html lang="en">
@@ -137,6 +136,8 @@ app.get('/', (req, res) => {
     </body>
     </html>
     `;
+
+app.get('/bfhl', (req, res) => {
     res.send(htmlResponse);
 });
 
